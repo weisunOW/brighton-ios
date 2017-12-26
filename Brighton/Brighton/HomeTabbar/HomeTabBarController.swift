@@ -15,7 +15,21 @@ extension HomeTabBarController: UITabBarControllerDelegate {
   
 }
 
+extension HomeTabBarController: Coordinated {
+
+  func accept(_ coordinator: Coordinator, with context: Context?) {
+    coordinator.visit(self, with: context)
+  }
+}
+
 extension Coordinator {
+
+  func visit(_ coordinated: HomeTabBarController, with context: Context? = nil) {
+
+    coordinated.delegate = coordinated
+    coordinated.context = context
+    coordinated.coordinator = self
+  }
 
   func displayHomeScreen(animated: Bool) {
 
@@ -26,13 +40,6 @@ extension Coordinator {
 
     self.homeTabBar = homeTabBar
     visit(homeTabBar)
-
     window?.switchRootViewController(homeTabBar, animated: animated)
-  }
-
-  func visit(_ coordinated: HomeTabBarController) {
-
-    coordinated.delegate = coordinated
-    coordinated.coordinator = self
   }
 }

@@ -22,7 +22,7 @@ class Coordinator {
   func prepare(segue: UIStoryboardSegue, with context: Context?) {
 
     guard let coordinated = coordinatedViewController(at: segue.destination) else {
-      fatalError("Coordinated view controller cannot be derived from \(segue.destination)")
+      fatalError("Coordinated view controller cannot be derived from \(segue.destination), make sure \(segue.destination) or its topViewController confroms protocol Coordinated")
     }
 
     coordinated.accept(self, with: context)

@@ -29,8 +29,8 @@ class CoordinatedViewController: UIViewController {
 
 protocol Coordinated {
 
-  var coordinator: Coordinator { get set }
-  var context: Context { get set }
+  var coordinator: Coordinator? { get set }
+  var context: Context? { get set }
 
   func accept(_ coordinator: Coordinator, with context: Context?)
 }
