@@ -1,5 +1,5 @@
 source "https://rubygems.org"
 
-gem 'slather'
-gem 'fastlane'
+gem 'nokogiri', '~> 1.8'
+gem 'fastlane', '~> 2.70'
 gem 'xcode-install'
