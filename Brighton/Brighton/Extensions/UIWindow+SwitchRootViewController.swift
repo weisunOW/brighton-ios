@@ -12,7 +12,7 @@ extension UIWindow {
   func switchRootViewController(_ viewController: UIViewController,
                                 animated: Bool = true,
                                 duration: TimeInterval = 1.0,
-                                options:  UIViewAnimationOptions = .transitionCrossDissolve,
+                                options:  UIView.AnimationOptions = .transitionCrossDissolve,
                                 completion: ((Bool) -> Void)? = nil) {
 
     guard animated else {
